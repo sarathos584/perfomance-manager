@@ -52,6 +52,7 @@ a {
   font-size: 16px;
   border: none;
   outline: none;
+  white-space: nowrap;
 }
 .secondary-btn {
   text-transform: uppercase;
@@ -181,10 +182,9 @@ header ul li a {
 }
 
 /* works section styling */
-.works{
-    background: #F5F5F5;
+.works {
+  background: #f5f5f5;
 }
-
 
 /* conference section styling */
 .card-sec {
@@ -420,7 +420,9 @@ footer {
 .other,
 .connect {
   flex: 1;
+  padding-left: 4rem;
 }
+
 .company-details img {
   margin-bottom: 49px;
 }
@@ -462,29 +464,62 @@ footer {
   display: block;
   font-weight: var(--small-font);
   font-size: 18px;
-  line-height:31px;
+  line-height: 31px;
   color: #ffffff;
+  white-space: nowrap;
 }
 .contact-id img {
   vertical-align: middle;
   display: inline-block;
   margin-right: 21px;
 }
-.social-media{
-    display: flex;
-    justify-content: stretch;
-    align-items: center;
-    gap: 32px;
-    padding-left:32px ;
+.social-media {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  gap: 32px;
+  padding-left: 32px;
 }
 
 /* mediquery-styling */
-@media screen and (max-width:767px) {
-    .feedback-container{
-        flex-wrap: wrap;
-    }
-    .contact-us{
-        flex-wrap: wrap;
-        
-    }
+@media screen and (max-width: 767px) {
+  /* responsive navbar styling0 */
+  header > div:first-child {
+    display: none;
+  }
+  .secondary-nav {
+    display: none;
+  }
+
+  .feedback-container {
+    flex-wrap: wrap;
+  }
+
+  /* contact section stlyling  */
+
+  .contact-us {
+    display: block;
+  }
+  .form-container {
+    width: 100%;
+  }
+  .contact-details {
+    display: block;
+    width: 100%;
+  }
+  /* news letter styling */
+  .news-letter .container {
+    display: block;
+  }
+
+  .news-letter .container div {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 375px) {
+  .logo-2 img {
+    width: 100%;
+    height: auto;
+  }
 }
