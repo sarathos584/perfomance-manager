@@ -85,6 +85,7 @@ a {
 /* header styling */
 .responsive-nav {
   display: none;
+  transition: all 0.3s ease;
 }
 header {
   padding-top: 20px;
@@ -94,6 +95,7 @@ header .site-navbar {
   justify-content: space-between;
   align-items: center;
 }
+
 header .logo {
   width: 172px;
   height: 55px;
@@ -116,6 +118,64 @@ header ul li a {
   line-height: var(--small-line-height);
   color: var(--nav-color);
   font-weight: var(--small-font);
+}
+#toggleBtn {
+  width: 30px;
+  height: 23px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  display: none;
+}
+#toggleBtn span {
+  display: inline-block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--primary-blue);
+  border-radius: 99px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+/* cross mark styling */
+.nav-open #toggleBtn span:nth-child(1),
+.nav-open #toggleBtn span:nth-child(4) {
+  display: none;
+}
+
+.nav-open #toggleBtn span:nth-child(3) {
+  transform: rotate(50deg);
+}
+.nav-open #toggleBtn span:nth-child(2) {
+  transform: rotate(-50deg);
+}
+/* corss mark style end here */
+
+#toggleBtn span:nth-child(1) {
+  top: 0;
+}
+#toggleBtn span:nth-child(2),
+#toggleBtn span:nth-child(3) {
+  top: 9px;
+}
+#toggleBtn span:nth-child(4) {
+  top: 18px;
 }
 .logo-2 {
   margin-top: 40px;
@@ -143,7 +203,19 @@ header ul li a {
   font-weight: var(--small-font);
   text-transform: uppercase;
 }
-
+.secondary-nav ul li a:after {
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.secondary-nav ul li a:hover:after {
+  width: 100%;
+  left: 0;
+}
 /* welcome-banner styling */
 .welcome-banner {
   background: url(./assets/banner-bg.svg);
@@ -442,14 +514,13 @@ footer {
   align-items: flex-start;
   flex-wrap: wrap;
 }
-footer .other {
-  display: flex;
-  justify-content: center;
-}
+
 .company-details,
 .other,
 .connect {
   flex: 1;
+  margin-left: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .company-details img {
@@ -512,12 +583,28 @@ footer .other {
 
 /* mediquery-styling */
 @media screen and (max-width: 767px) {
-  /* responsive navbar styling0 */
-  header .site-navbar {
+  /* responsive navbar styling */
+  .logo-2 {
+    margin-top: 1rem;
+  }
+  .primary-nav ul,
+  .regionals,
+  .secondary-nav {
     display: none !important;
   }
-  .secondary-nav {
-    display: none;
+  .nav-open .mobile-navbar .responsive-nav {
+    display: block;
+  }
+  .mobile-navbar .responsive-nav ul {
+    display: block !important;
+    text-align: center !important;
+  }
+  .mobile-navbar .responsive-nav ul li {
+    margin-top: 1rem;
+  }
+
+  #toggleBtn {
+    display: inline;
   }
 
   .feedback-container {
@@ -528,7 +615,9 @@ footer .other {
   .about,
   .works,
   .conferences,
-  .planning {
+  .planning,
+  .contact,
+  .news-letter {
     padding: 2.5rem 0;
   }
   center img {
@@ -581,6 +670,11 @@ footer .other {
   .section-head {
     font-size: 26px;
   }
+  .banner-text h1 {
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+
   .logo-2 img {
     width: 100%;
     height: auto;
@@ -588,6 +682,10 @@ footer .other {
   .card-sec .card {
     padding: 17px 38px;
     justify-content: space-around;
+  }
+  .works .card {
+    display: block;
+    text-align: center;
   }
   .news-letter .container div {
     flex-direction: column;
@@ -598,5 +696,36 @@ footer .other {
   }
   .form-container .name-input {
     gap: 1rem;
+  }
+  .company-details,
+  .other,
+  .connect {
+    flex: 1;
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+  .contact-id img {
+    margin-right: 10px;
+  }
+  .contact-id {
+    white-space: pre-wrap;
+  }
+  .contact-btn {
+    text-align: center;
+  }
+  .form-container button {
+    margin-top: 1rem;
+  }
+  .info {
+    padding: 0;
+  }
+  .footer {
+    display: block;
+  }
+  footer .container {
+    padding: 0 5px;
+  }
+  .company-details img {
+    width: 100%;
   }
 }

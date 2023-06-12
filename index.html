@@ -5,27 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>perfomance manager</title>
     <link rel="stylesheet" href="./style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
   <body>
     <header class="header-main">
-      <div class="container mobile-navbar">
-        <div class="responsive-nav">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#">GovEd Talks</a></li>
-            <li><a href="#">Solutions</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Partners</a></li>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Conferences</a></li>
-            <li><a href="#">Speakers</a></li>
-            <li><a href="#">Sponsers</a></li>
-            <li><a href="#">Registration</a></li>
-          </ul>
-        </div>
-      </div>
+      
       <div class="container site-navbar">
         <div class="logo">
           <a href="index.html"
@@ -45,6 +29,30 @@
           <div class="regionals">
             <button class="btn primary-btn">Regionals</button>
           </div>
+          <div class="toggle-btn" id="toggleBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <div class="container mobile-navbar">
+        <div class="responsive-nav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#">GovEd Talks</a></li>
+            <li><a href="#">Solutions</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Conferences</a></li>
+            <li><a href="#">Speakers</a></li>
+            <li><a href="#">Sponsers</a></li>
+            <li><a href="#">Registration</a></li>
+          </ul>
         </div>
       </div>
       <div class="logo-2 container text-center">
@@ -330,7 +338,7 @@
                   rows="10"
                 ></textarea>
               </div>
-              <button class="primary-btn">SUBMIT</button>
+             <div class="contact-btn"> <button class="primary-btn">SUBMIT</button></div>
             </form>
           </div>
           <div class="contact-details">
@@ -441,5 +449,7 @@
         </div>
       </div>
     </footer>
+    <script src="./main.js"></script>
+   
   </body>
 </html>
